@@ -1,6 +1,6 @@
 <?php
 
-namespace halumein\wishlist;
+namespace kriptograf\wishlist;
 
 /**
  * wishlist module definition class

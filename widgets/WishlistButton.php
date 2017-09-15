@@ -1,8 +1,8 @@
 <?php
-namespace halumein\wishlist\widgets;
+namespace kriptograf\wishlist\widgets;
 
 use yii\helpers\Html;
-use halumein\wishlist\models\Wishlist;
+use kriptograf\wishlist\models\Wishlist;
 use yii\helpers\Url;
 use yii;
 
@@ -19,7 +19,7 @@ class WishlistButton extends \yii\base\Widget
     {
         parent::init();
 
-        \halumein\wishlist\assets\WidgetAsset::register($this->getView());
+        \kriptograf\wishlist\assets\WidgetAsset::register($this->getView());
 
         if ($this->anchorActive === NULL) {
             $this->anchorActive = 'В избранном';

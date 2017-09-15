@@ -1,6 +1,6 @@
 <?php
 
-namespace halumein\wishlist\models;
+namespace kriptograf\wishlist\models;
 
 use Yii;
 

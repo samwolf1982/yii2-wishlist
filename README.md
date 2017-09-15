@@ -1,6 +1,6 @@
 Yii2-wishlist
 ==========
-Модуль избранного для Yii2 фреймворка. ДЛЯ АВТОРИЗОВАННЫХ ПОЛЬЗОВАТЕЛЕЙ
+Модуль избранного для Yii2 фреймворка. ДЛЯ любых ПОЛЬЗОВАТЕЛЕЙ
 
 
 Установка
@@ -8,19 +8,19 @@ Yii2-wishlist
 Выполнить команду
 
 ```
-composer require halumein/yii2-wishlist "*"
+composer require kriptograf/yii2-wishlist "*"
 ```
 
 Либо в composer.json строку:
 
 ```
-"halumein/yii2-wishlist": "dev-master",
+"kriptograf/yii2-wishlist": "dev-master",
 ```
 
 Далее, мигрируем базу:
 
 ```
-php yii migrate --migrationPath=vendor/halumein/yii2-wishlist/migrations
+php yii migrate --migrationPath=vendor/kriptograf/yii2-wishlist/migrations
 ```
 
 Подключение и настройка
@@ -30,14 +30,14 @@ php yii migrate --migrationPath=vendor/halumein/yii2-wishlist/migrations
 ```php
     'modules' => [
         'wishlist' => [
-            'class' => 'halumein\wishlist\Module',
+            'class' => 'kriptograf\wishlist\Module',
         ],
         //...
     ],
 
     'components' => [
         'wishlist' => [
-            'class' => 'halumein\wishlist\Wishlist'
+            'class' => 'kriptograf\wishlist\Wishlist'
         ],
         //...
     ],

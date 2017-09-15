@@ -1,17 +1,17 @@
 {
-    "name": "halumein/yii2-wishlist",
+    "name": "kriptograf/yii2-wishlist",
     "description": "Кнопка добавить в избранное",
     "keywords": ["yii2", "yii2", "application"],
-    "homepage": "https://github.com/halumein",
+    "homepage": "https://github.com/kriptograf",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/halumein"
+        "source": "https://github.com/kriptograf"
     },
     "authors": [
         {
-            "name": "Vadim Trishlin",
-            "email": "halumein@gmail.com"
+            "name": "Moskvin Vitaliy",
+            "email": "moskvinvitaliy@gmail.com"
         }
     ],
     "minimum-stability": "dev",
@@ -25,7 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "halumein\\wishlist\\": ""
+            "kriptograf\\wishlist\\": ""
         }
     }
 }
