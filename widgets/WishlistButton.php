@@ -69,6 +69,7 @@ class WishlistButton extends \yii\base\Widget
         $url = '/wishlist/element/add';
         $model = $this->model;
         $text = $this->anchorUnactive;
+        $title = $this->anchorTitleUnactive;
 
         if(Yii::$app->user->isGuest)
         {
@@ -92,6 +93,7 @@ class WishlistButton extends \yii\base\Widget
 
         if ($elementModel) {
             $text = $this->anchorActive;
+            $title = $this->anchorTitleActive;
             $this->cssClass .= ' '.$this->cssClassInList;
             $action = 'remove';
             $url = '/wishlist/element/remove';
@@ -104,7 +106,8 @@ class WishlistButton extends \yii\base\Widget
             'data-action' => $action,
             'data-in-list-css-class' => $this->cssClassInList,
             'data-item-id' => $model->id,
-            'data-model' => $model::className()
+            'data-model' => $model::className(),
+            'title' => $title,
         ]);
     }
 }
