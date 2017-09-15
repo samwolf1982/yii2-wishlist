@@ -75,6 +75,8 @@ use kriptograf\wishlist\widgets\WishlistButton;
 	'model' => $model, // модель для добавления
 	'anchorActive' => 'В избранном', // свой текст активной кнопки
 	'anchorUnactive' => 'В избранное', // свой текст неактивной кнопки
+  'anchorTitleActive' => 'В избранном',//Свой текст подсказки активной кнопки
+  'anchorTitleUnactive' => 'В избранное',//свой текст подсказки неактивной кнопки
 	'htmlTag' => 'a', // тэг
 	'cssClass' => 'custom_class', // свой класс
     'cssClassInList' => 'custom_class' // свой класс для добавленного объекта
@@ -82,7 +84,7 @@ use kriptograf\wishlist\widgets\WishlistButton;
 
 ```
 
-Дэфолтные css-стили
+Дефолтные css-стили
 ```css
 
 .hal-wishlist-button {

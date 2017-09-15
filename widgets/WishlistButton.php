@@ -10,8 +10,8 @@ class WishlistButton extends \yii\base\Widget
 {
     public $anchorActive = NULL;
     public $anchorUnactive = NULL;
-    public $ancorTitleActive = NULL;
-    public $ancorTitleUnactive = NULL;
+    public $anchorTitleActive = NULL;
+    public $anchorTitleUnactive = NULL;
     public $model = NULL;
     public $cssClass = NULL;
     public $cssClassInList = NULL;
