@@ -33,6 +33,7 @@ class Wishlist extends \yii\db\ActiveRecord
             [['token', 'model', 'item_id'], 'required'],
             [['user_id', 'item_id'], 'integer'],
             [['model', 'token', 'token_expire'], 'string', 'max' => 255],
+            [['token_expire'], 'safe'],
         ];
     }
 
