@@ -1,6 +1,7 @@
 <?php
 namespace kriptograf\wishlist;
 
+use Yii;
 use yii\base\Component;
 
 class Wishlist extends Component
