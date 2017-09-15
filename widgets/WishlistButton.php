@@ -55,11 +55,25 @@ class WishlistButton extends \yii\base\Widget
         $model = $this->model;
         $text = $this->anchorUnactive;
 
-        $elementModel = Wishlist::find()->where([
-            'user_id' => \Yii::$app->user->getId(),
-            'model' => $model::className(),
-            'item_id' => $model->id,
-            ])->one();
+        if(Yii::$app->user->isGuest)
+        {
+            $uwlToken = Yii::$app->request->cookies->getValue('uwl_token', null);
+            $elementModel = Wishlist::find()->where([
+                'token' => $uwlToken,
+                'model' => $model::className(),
+                'item_id' => $model->id,
+                ])->one();
+        }
+        else
+        {
+            $elementModel = Wishlist::find()->where([
+                'user_id' => \Yii::$app->user->id,
+                'model' => $model::className(),
+                'item_id' => $model->id,
+                ])->one();
+        }
+
+
 
         if ($elementModel) {
             $text = $this->anchorActive;

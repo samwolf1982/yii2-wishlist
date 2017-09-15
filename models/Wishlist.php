@@ -9,6 +9,8 @@ use Yii;
  *
  * @property integer $id
  * @property integer $user_id
+ * @property string $token
+ * @property date $token_expire
  * @property string $model
  * @property integer $item_id
  */
@@ -28,9 +30,9 @@ class Wishlist extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'model', 'item_id'], 'required'],
+            [['token', 'model', 'item_id'], 'required'],
             [['user_id', 'item_id'], 'integer'],
-            [['model'], 'string', 'max' => 255],
+            [['model', 'token', 'token_expire'], 'string', 'max' => 255],
         ];
     }
 

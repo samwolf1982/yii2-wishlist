@@ -12,10 +12,12 @@ class m160518_074611_wishlist extends Migration
         $this->createTable(
             '{{%wishlist}}',
             [
-                'id'=> Schema::TYPE_PK."",
-                'user_id'=> Schema::TYPE_INTEGER."(11) NOT NULL",
-                'model'=> Schema::TYPE_STRING."(255) NOT NULL",
-                'item_id'=> Schema::TYPE_INTEGER."(11) NOT NULL",
+                'id' => $this->primaryKey(),
+                'user_id' => $this->integer(11),
+                'token' => $this->string(255)->notNull(),
+                'token_expire' => $this->date(),
+                'model' => $this->string(255)->notNull(),
+                'item_id' => $this->integer(11)->notNull(),
                 ],
             $tableOptions
         );
