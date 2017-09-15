@@ -144,6 +144,12 @@ class ElementController extends Controller
                 'url' => Url::toRoute('/wishlist/element/remove'),
             ];
         }
+        else {
+            return [
+                'response' => $wishlistModel->getErrors(),
+                'url' => Url::toRoute('/wishlist/element/remove'),
+            ];
+        }
 
         return [
             'response' => false
