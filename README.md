@@ -62,7 +62,7 @@ php yii migrate --migrationPath=vendor/kriptograf/yii2-wishlist/migrations
 ```php
 
 <?php
-use halumein\wishlist\widgets\WishlistButton;
+use kriptograf\wishlist\widgets\WishlistButton;
 ?>
 
 <?php /* Выведет кнопку "добавить в избранное" */ ?>

@@ -1,6 +1,7 @@
 <?php
 namespace kriptograf\wishlist\controllers;
 
+use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use kriptograf\wishlist\models\Wishlist;
