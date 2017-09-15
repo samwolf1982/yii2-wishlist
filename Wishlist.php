@@ -34,7 +34,8 @@ class Wishlist extends Component
         }
 
         foreach ( $uwls as $uwl ) {
-            $list[] = $this->findModel($uwl->model, $uwl->item_id);
+            $list['model_name'][] = $uwl->model;
+            $list['model'][] = $this->findModel($uwl->model, $uwl->item_id);
         }
 
         return $list;
