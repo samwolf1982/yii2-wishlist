@@ -2,7 +2,7 @@
     "name": "kriptograf/yii2-wishlist",
     "description": "Кнопка добавить в избранное",
     "keywords": ["yii2", "yii2", "application"],
-    "homepage": "https://github.com/kriptograf",
+    "homepage": "https://github.com/kriptograf/yii2-wishlist",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
@@ -26,6 +26,11 @@
     "autoload": {
         "psr-4": {
             "kriptograf\\wishlist\\": ""
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
         }
     }
 }
