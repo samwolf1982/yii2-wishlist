@@ -33,9 +33,9 @@ class Wishlist extends Component
             $uwls = \kriptograf\wishlist\models\Wishlist::findAll(['user_id' => \Yii::$app->user->id]);
         }
 
-        foreach ( $uwls as $uwl ) {
-            $list['model_name'][] = $uwl->model;
-            $list['model'][] = $this->findModel($uwl->model, $uwl->item_id);
+        foreach ( $uwls as $key => $uwl ) {
+            $list[$key]['model_name'] = $uwl->model;
+            $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
         }
 
         return $list;
