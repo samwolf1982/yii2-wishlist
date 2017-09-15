@@ -1,5 +1,5 @@
 <?php
-namespace halumein\wishlist;
+namespace kriptograf\wishlist;
 
 use yii\base\Component;
 
@@ -9,7 +9,7 @@ class Wishlist extends Component
     {
         $list = [];
 
-        foreach ( \halumein\wishlist\models\Wishlist::findAll(['user_id' => \Yii::$app->user->id]) as $uwl ) {
+        foreach ( \kriptograf\wishlist\models\Wishlist::findAll(['user_id' => \Yii::$app->user->id]) as $uwl ) {
             $list[] = $this->findModel($uwl->model, $uwl->item_id);
         }
 
@@ -26,6 +26,6 @@ class Wishlist extends Component
 
     public function getUserWishlistAmount()
     {
-        return \halumein\wishlist\models\Wishlist::find()->where(['user_id' => \Yii::$app->user->id])->count();
+        return \kriptograf\wishlist\models\Wishlist::find()->where(['user_id' => \Yii::$app->user->id])->count();
     }
 }
