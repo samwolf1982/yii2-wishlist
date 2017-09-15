@@ -14,6 +14,7 @@ $(function () {
                         $(button).data('url', response.url).attr('data-url', response.url);
                         inListCssClass = $(button).data('in-list-css-class');
                         $(button).addClass(inListCssClass);
+                        $(button).attr('title', wishlist.anchor.activeTitle);
                         $(button).html(wishlist.anchor.active);
                         return true;
                     } else {
@@ -40,6 +41,7 @@ $(function () {
                         $(button).data('url', response.url).attr('data-url', response.url);
                         inListCssClass = $(button).data('in-list-css-class');
                         $(button).removeClass(inListCssClass);
+                        $(button).attr('title', wishlist.anchor.unactiveTitle);
                         $(button).html(wishlist.anchor.unactive);
                         return true;
                     } else {

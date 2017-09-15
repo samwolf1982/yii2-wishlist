@@ -10,6 +10,8 @@ class WishlistButton extends \yii\base\Widget
 {
     public $anchorActive = NULL;
     public $anchorUnactive = NULL;
+    public $ancorTitleActive = NULL;
+    public $ancorTitleUnactive = NULL;
     public $model = NULL;
     public $cssClass = NULL;
     public $cssClassInList = NULL;
@@ -29,7 +31,20 @@ class WishlistButton extends \yii\base\Widget
             $this->anchorUnactive = 'В избранное';
         }
 
-        $anchor = ['active' => $this->anchorActive, 'unactive' => $this->anchorUnactive];
+        if ($this->anchorTitleActive === NULL) {
+            $this->anchorTitleActive = 'В избранном';
+        }
+
+        if ($this->anchorTitleUnactive === NULL) {
+            $this->anchorTitleUnactive = 'Добавить в избранное';
+        }
+
+        $anchor = [
+            'active' => $this->anchorActive,
+            'unactive' => $this->anchorUnactive,
+            'activeTitle' => $this->anchorTitleActive,
+            'unactiveTitle' => $this->anchorTitleUnactive
+        ];
 
         if ($this->cssClass === NULL) {
             $this->cssClass = 'hal-wishlist-button';
