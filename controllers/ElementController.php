@@ -1,9 +1,9 @@
 <?php
-namespace halumein\wishlist\controllers;
+namespace kriptograf\wishlist\controllers;
 
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use halumein\wishlist\models\Wishlist;
+use kriptograf\wishlist\models\Wishlist;
 use yii\helpers\Url;
 
 
