@@ -3,7 +3,7 @@ namespace kriptograf\wishlist;
 
 use Yii;
 use yii\base\Component;
-use yii\yii\helpers\Html;
+use yii\helpers\Html;
 
 class Wishlist extends Component
 {
