@@ -19,7 +19,7 @@ class Module extends \yii\base\Module
      * Время жизни куки с токеном
      * @var string
      */
-    public $cokieDateExpired = time() + 86400 * 365;
+    public $cokieDateExpired = 86400 * 365;
 
     public function init()
     {

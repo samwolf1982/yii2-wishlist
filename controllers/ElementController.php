@@ -105,7 +105,7 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => $uwlToken,
-                    'expire' => $this->getModule('wishlist')->cokieDateExpired,
+                    'expire' => time()+$this->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
             $wishlistModel->token = $uwlToken;
@@ -123,7 +123,7 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => \Yii::$app->security->generateRandomString(),
-                    'expire' => $this->getModule('wishlist')->cokieDateExpired,
+                    'expire' => time()+$this->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
 
