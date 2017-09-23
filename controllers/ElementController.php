@@ -105,11 +105,11 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => $uwlToken,
-                    'expire' => time()+$this->getModule('wishlist')->cokieDateExpired,
+                    'expire' => time()+\Yii::$app->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
             $wishlistModel->token = $uwlToken;
-            $wishlistModel->token_expire = new Expression($this->getModule('wishlist')->dbDateExpired);
+            $wishlistModel->token_expire = new Expression(\Yii::$app->getModule('wishlist')->dbDateExpired);
         }
         else
         {
@@ -123,12 +123,12 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => \Yii::$app->security->generateRandomString(),
-                    'expire' => time()+$this->getModule('wishlist')->cokieDateExpired,
+                    'expire' => time()+\Yii::$app->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
 
             $wishlistModel->token = $uwlToken;
-            $wishlistModel->token_expire = new Expression($this->getModule('wishlist')->dbDateExpired);
+            $wishlistModel->token_expire = new Expression(\Yii::$app->getModule('wishlist')->dbDateExpired);
             $wishlistModel->user_id = \Yii::$app->user->id;
         }
 
