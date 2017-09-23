@@ -31,6 +31,8 @@ php yii migrate --migrationPath=vendor/kriptograf/yii2-wishlist/migrations
     'modules' => [
         'wishlist' => [
             'class' => 'kriptograf\wishlist\Module',
+            'dbDateExpired' => 'CURDATE() + INTERVAL 7 DAY', //дата истечения срока действия избранного в БД
+            'cokieDateExpired' => time() + 86400 * 365, //Время жизни куки с токеном
         ],
         //...
     ],

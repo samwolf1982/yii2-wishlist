@@ -3,6 +3,7 @@ namespace kriptograf\wishlist;
 
 use Yii;
 use yii\base\Component;
+use yii\yii\helpers\Html;
 
 class Wishlist extends Component
 {
@@ -57,18 +58,20 @@ class Wishlist extends Component
 
     /**
      * Получить количество записей в избранном
-     * @return [type] [description]
+     * @return [type] Если записей нет вернуть null иначе венуть количестов записей
      */
     public function getUserWishlistAmount()
     {
         if(Yii::$app->user->isGuest)
         {
             $uwlToken = Yii::$app->request->cookies->getValue('uwl_token', null);
-            return \kriptograf\wishlist\models\Wishlist::find()->where(['token' => $uwlToken])->count();
+            $count = \kriptograf\wishlist\models\Wishlist::find()->where(['token' => $uwlToken])->count();
+            return Html::tag('span', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
         }
         else
         {
-            return \kriptograf\wishlist\models\Wishlist::find()->where(['user_id' => \Yii::$app->user->id])->count();
+            $count = \kriptograf\wishlist\models\Wishlist::find()->where(['user_id' => \Yii::$app->user->id])->count();
+            return Html::tag('span', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
         }
     }
 }

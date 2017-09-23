@@ -16,6 +16,7 @@ $(function () {
                         $(button).addClass(inListCssClass);
                         $(button).attr('title', wishlist.anchor.activeTitle);
                         $(button).html(wishlist.anchor.active);
+                        $('#count-wishlist-badge').text(response.count);
                         return true;
                     } else {
                         $(button).data('action', 'add').attr('data-action', 'add');
@@ -43,6 +44,7 @@ $(function () {
                         $(button).removeClass(inListCssClass);
                         $(button).attr('title', wishlist.anchor.unactiveTitle);
                         $(button).html(wishlist.anchor.unactive);
+                        $('#count-wishlist-badge').text(response.count);
                         return true;
                     } else {
                         $(button).data('action', 'remove').attr('data-action', 'remove');

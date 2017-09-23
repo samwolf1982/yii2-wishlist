@@ -105,11 +105,11 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => $uwlToken,
-                    'expire' => time() + 86400 * 365,
+                    'expire' => $this->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
             $wishlistModel->token = $uwlToken;
-            $wishlistModel->token_expire = new Expression('CURDATE() + INTERVAL 7 DAY');
+            $wishlistModel->token_expire = new Expression($this->getModule('wishlist')->dbDateExpired);
         }
         else
         {
@@ -123,12 +123,12 @@ class ElementController extends Controller
                 Yii::$app->response->cookies->add(new \yii\web\Cookie([
                     'name' => 'uwl_token',
                     'value' => \Yii::$app->security->generateRandomString(),
-                    'expire' => time() + 86400 * 365,
+                    'expire' => $this->getModule('wishlist')->cokieDateExpired,
                 ]));
             }
 
             $wishlistModel->token = $uwlToken;
-            $wishlistModel->token_expire = new Expression('CURDATE() + INTERVAL 7 DAY');
+            $wishlistModel->token_expire = new Expression($this->getModule('wishlist')->dbDateExpired);
             $wishlistModel->user_id = \Yii::$app->user->id;
         }
 
@@ -140,12 +140,14 @@ class ElementController extends Controller
 
         if ($wishlistModel->save()) {
             return [
+                'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                 'response' => true,
                 'url' => Url::toRoute('/wishlist/element/remove'),
             ];
         }
         else {
             return [
+                'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                 'response' => $wishlistModel->getErrors(),
                 'url' => Url::toRoute('/wishlist/element/remove'),
             ];
@@ -192,6 +194,7 @@ class ElementController extends Controller
         {
             if ($elementModel->delete()) {
                 return [
+                    'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                     'response' => true,
                     'url' => Url::toRoute('/wishlist/element/add'),
                 ];
@@ -200,6 +203,7 @@ class ElementController extends Controller
         else
         {
             return [
+                'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                 'response' => true,
                 'url' => Url::toRoute('/wishlist/element/add'),
             ];
