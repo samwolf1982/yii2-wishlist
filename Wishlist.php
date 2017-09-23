@@ -66,12 +66,12 @@ class Wishlist extends Component
         {
             $uwlToken = Yii::$app->request->cookies->getValue('uwl_token', null);
             $count = \kriptograf\wishlist\models\Wishlist::find()->where(['token' => $uwlToken])->count();
-            return Html::tag('span', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
+            return Html::tag('i', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
         }
         else
         {
             $count = \kriptograf\wishlist\models\Wishlist::find()->where(['user_id' => \Yii::$app->user->id])->count();
-            return Html::tag('span', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
+            return Html::tag('i', ($count)?$count:null, ['id'=>'count-wishlist-badge']);
         }
     }
 }
