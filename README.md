@@ -2,6 +2,9 @@ Yii2-wishlist
 ==========
 Модуль избранного для Yii2 фреймворка. ДЛЯ любых ПОЛЬЗОВАТЕЛЕЙ
 основан на kriptograf/yii2-wishlist
+добавлено полее type-int для типа лайка например лайки и сравнения 
+ 
+пример использование  http://www.dominanta-d.com/
 
 
 Установка
@@ -9,13 +12,13 @@ Yii2-wishlist
 Выполнить команду
 
 ```
-composer require kriptograf/yii2-wishlist "*"
+composer require samwolf1982/yii2-wishlist
 ```
 
 Либо в composer.json строку:
 
 ```
-"kriptograf/yii2-wishlist": "dev-master",
+"samwolf1982/yii2-wishlist": "dev-master",
 ```
 
 Далее, мигрируем базу:
