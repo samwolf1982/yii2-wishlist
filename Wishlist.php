@@ -35,9 +35,12 @@ class Wishlist extends Component
         }
 
         foreach ( $uwls as $key => $uwl ) {
-            $list[$key]['model_name'] = $uwl->model;
-         //   $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
-            $list[$key]['model'] = $this->findModelByType($uwl->model, $uwl->item_id, $type_wish);
+            if ($uwl->type_wish==$type_wish){
+                $list[$key]['model_name'] = $uwl->model;
+                $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
+                //  $list[$key]['model'] = $this->findModelByType($uwl->model, $uwl->item_id, $type_wish);
+            }
+
         }
 
         return $list;

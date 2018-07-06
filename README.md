@@ -29,7 +29,6 @@ composer require samwolf1982/yii2-wishlist
 Далее, мигрируем базу:
 
 ```
-
 php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
 ```
 
