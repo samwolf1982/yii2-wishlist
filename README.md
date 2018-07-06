@@ -66,6 +66,11 @@ php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
 \Yii::$app->wishlist->getUserWishlistAmount()
 ```
 
+
+``` fix
+add if present class
+```
+
 Виджеты
 ==========
 Кнопка добавить/убрать объект в избранное.
@@ -124,6 +129,8 @@ use kriptograf\wishlist\widgets\WishlistButton;
 .in-list:before {
     background: #CC63B0; /* цвет сердечка */
 }
+
+
 
 
 ```

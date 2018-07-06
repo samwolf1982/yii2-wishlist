@@ -54,8 +54,11 @@ class Wishlist extends Component
     private function findModel($model, $id)
     {
         $model = '\\'.$model;
-        $model = new $model();
-        return $model::findOne($id);
+        if (class_exists($model)){
+            $model = new $model();
+            return $model::findOne($id);
+        }
+        return null;
     }
 
     /**
