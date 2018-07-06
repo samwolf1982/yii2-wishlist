@@ -23,7 +23,7 @@ class Wishlist extends Component
         if(Yii::$app->user->isGuest)
         {
             $uwlToken = Yii::$app->request->cookies->getValue('uwl_token', null);
-            $uwls = \kriptograf\wishlist\models\Wishlist::findAll(['token' => $uwlToken]);
+            $uwls = \kriptograf\wishlist\models\Wishlist::findAll(['token' => $uwlToken,'type_wish' => $type_wish]);
         }
         else
         {
@@ -31,15 +31,13 @@ class Wishlist extends Component
              * Получить данные по идентификатору пользователя
              * @var [type]
              */
-            $uwls = \kriptograf\wishlist\models\Wishlist::findAll(['user_id' => \Yii::$app->user->id]);
+            $uwls = \kriptograf\wishlist\models\Wishlist::findAll(['user_id' => \Yii::$app->user->id,'type_wish' => $type_wish]);
         }
 
         foreach ( $uwls as $key => $uwl ) {
-            if ($uwl->type_wish==$type_wish){
                 $list[$key]['model_name'] = $uwl->model;
                 $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
-                //  $list[$key]['model'] = $this->findModelByType($uwl->model, $uwl->item_id, $type_wish);
-            }
+
 
         }
 
