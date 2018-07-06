@@ -8,7 +8,6 @@ use kriptograf\wishlist\models\Wishlist;
 use yii\helpers\Url;
 use yii\db\Expression;
 
-
 /**
  * Default controller for the `wishlist` module
  */
