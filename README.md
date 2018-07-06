@@ -58,7 +58,7 @@ php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
 ===========
 Получить вишлист ТЕКУЩЕГО пользователя (возвращает массив моделей добавленных в вишлист объектов):
 ```php
-\Yii::$app->wishlist->getUserWishList($type=0)   тип 
+\Yii::$app->wishlist->getUserWishList($type=0)   тип  по умолчанию 0 
 ```
 
 Получить количество добавленных в вишлист объектов для текущего пользователя
