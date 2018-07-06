@@ -68,7 +68,6 @@ class Wishlist extends Component
         $model = '\\'.$model;
         $model = new $model();
         return $model::find()->where(['id'=>$id,'type_wish'=>$type_wish])->one();
-
     }
 
     /**
