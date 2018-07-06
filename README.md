@@ -29,7 +29,8 @@ composer require samwolf1982/yii2-wishlist
 Далее, мигрируем базу:
 
 ```
-php yii migrate --migrationPath=vendor/kriptograf/yii2-wishlist/migrations
+php yii migrate --migrationPath=vendor/kriptograf/yii2-wishlist/migrations ----- del
+php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
 ```
 
 Подключение и настройка
