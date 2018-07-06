@@ -31,7 +31,7 @@ class Wishlist extends \yii\db\ActiveRecord
     {
         return [
             [['token', 'model', 'item_id'], 'required'],
-            [['user_id', 'item_id'], 'integer'],
+            [['user_id', 'item_id','type_wish'], 'integer'],
             [['model', 'token'], 'string', 'max' => 255],
             [['token_expire'], 'safe'],
         ];
@@ -47,6 +47,7 @@ class Wishlist extends \yii\db\ActiveRecord
             'user_id' => 'User ID',
             'model' => 'Model',
             'item_id' => 'Item ID',
+            'type_wish' => 'Type wish',
         ];
     }
 

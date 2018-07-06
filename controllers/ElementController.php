@@ -65,6 +65,7 @@ class ElementController extends Controller
                 'token' => $uwlToken,
                 'model' => $postData['model'],
                 'item_id' => $postData['itemId'],
+                'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ])->one();
 
             if ($checkModel) {
@@ -81,12 +82,14 @@ class ElementController extends Controller
                 'user_id' => \Yii::$app->user->getId(),
                 'model' => $postData['model'],
                 'item_id' => $postData['itemId'],
+                'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ])->one();
 
             if ($checkModel) {
                 return [
                     'response' => true,
                     'url' => Url::toRoute('/wishlist/element/remove'),
+                    'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ];
             }
         }
@@ -135,6 +138,8 @@ class ElementController extends Controller
 
         $wishlistModel->model = $postData['model'];
         $wishlistModel->item_id = $postData['itemId'];
+        $wishlistModel->type_wish = isset($postData['type_wish'])?$postData['type_wish']: 0;
+
 
 
 
@@ -174,6 +179,7 @@ class ElementController extends Controller
                 'token' => $uwlToken,
                 'model' => $postData['model'],
                 'item_id' => $postData['itemId'],
+                'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ])->one();
         }
         else
@@ -182,6 +188,7 @@ class ElementController extends Controller
                 'user_id' => \Yii::$app->user->id,
                 'model' => $postData['model'],
                 'item_id' => $postData['itemId'],
+                'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ])->one();
         }
 
@@ -197,6 +204,7 @@ class ElementController extends Controller
                     'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                     'response' => true,
                     'url' => Url::toRoute('/wishlist/element/add'),
+                    'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
                 ];
             }
         }
@@ -206,6 +214,7 @@ class ElementController extends Controller
                 'count' => Wishlist::find()->where(['user_id' => \Yii::$app->user->id,])->count(),
                 'response' => true,
                 'url' => Url::toRoute('/wishlist/element/add'),
+                'type_wish' => isset($postData['type_wish'])?$postData['type_wish']: 0 ,
             ];
         }
 

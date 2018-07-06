@@ -18,7 +18,7 @@ class m160518_074611_wishlist extends Migration
                 'token_expire' => $this->date(),
                 'model' => $this->string(255)->notNull(),
                 'item_id' => $this->integer(11)->notNull(),
-                'type' => $this->integer(11)->defaultValue(0),
+                'type_wish' => $this->integer(11)->defaultValue(0),
                 ],
             $tableOptions
         );
