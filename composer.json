@@ -2,11 +2,11 @@
     "name": "samwolf1982/yii2-wishlist",
     "description": "Кнопка добавить в избранное plus extend model",
     "keywords": ["yii2", "yii2", "application"],
-    "homepage": "https://github.com/samwolf1982/yii2-wishlist",
+    "homepage": "https://github.com/samwolf1982",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "support": {
-        "source": "https://github.com/samwolf1982"
+        "source": "https://github.com/samwolf1982/yii2-wishlist"
     },
     "authors": [
         {
