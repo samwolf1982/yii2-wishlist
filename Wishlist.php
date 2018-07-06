@@ -11,7 +11,7 @@ class Wishlist extends Component
      * Список сущностей сохраненных в избранном
      * @return [type] [description]
      */
-    public function getUserWishList()
+    public function getUserWishList($type_wish=0)
     {
         $list = [];
 
@@ -36,10 +36,25 @@ class Wishlist extends Component
 
         foreach ( $uwls as $key => $uwl ) {
             $list[$key]['model_name'] = $uwl->model;
-            $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
+         //   $list[$key]['model'] = $this->findModel($uwl->model, $uwl->item_id);
+            $list[$key]['model'] = $this->findModelByType($uwl->model, $uwl->item_id, $type_wish);
         }
 
         return $list;
+    }
+
+    /**
+     * [findModel description]
+     * @param $model
+     * @param $id
+     * @param $type_wish
+     * @return mixed [type]        [description]
+     */
+    private function findModel($model, $id)
+    {
+        $model = '\\'.$model;
+        $model = new $model();
+        return $model::findOne($id);
     }
 
     /**
@@ -48,12 +63,12 @@ class Wishlist extends Component
      * @param  [type] $id    [description]
      * @return [type]        [description]
      */
-    private function findModel($model, $id)
+    private function findModelByType($model, $id,$type_wish=0)
     {
         $model = '\\'.$model;
         $model = new $model();
+        return $model::find()->where(['id'=>$id,'type_wish'=>$type_wish])->one();
 
-        return $model::findOne($id);
     }
 
     /**
