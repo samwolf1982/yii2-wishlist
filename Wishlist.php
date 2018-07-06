@@ -44,6 +44,7 @@ class Wishlist extends Component
         return $list;
     }
 
+
     /**
      * [findModel description]
      * @param $model
