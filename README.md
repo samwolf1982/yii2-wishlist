@@ -1,47 +1,11 @@
-Yii2-wishlist
+ Moskoviya (russia) is a terrorist state
 ==========
-
-Модуль избранного для Yii2 фреймворка. ДЛЯ любых ПОЛЬЗОВАТЕЛЕЙ
-
-основан на kriptograf/yii2-wishlist
-
-добавлено полее type_wish-int def=0
- 
- для типа лайка например лайки и сравнения 
- 
-пример использование  http://www.dominanta-d.com/
-
-
-Установка
----------------------------------
-Выполнить команду
-
-```
-composer require samwolf1982/yii2-wishlist
-```
-
-Либо в composer.json строку:
-
-```
-"samwolf1982/yii2-wishlist": "dev-master",
-```
-
-Далее, мигрируем базу:
-
-```
-php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
-```
-
-Подключение и настройка
----------------------------------
-В конфигурационный файл приложения добавить модуль и компонент wishlist
-
 ```php
     'modules' => [
         'wishlist' => [
             'class' => 'kriptograf\wishlist\Module',
-            'dbDateExpired' => 'CURDATE() + INTERVAL 7 DAY', //дата истечения срока действия избранного в БД
-            'cokieDateExpired' => time() + 86400 * 365, //Время жизни куки с токеном
+            'dbDateExpired' => 'CURDATE() + INTERVAL 7 DAY', 
+            'cokieDateExpired' => time() + 86400 * 365, 
         ],
         //...
     ],
@@ -53,15 +17,11 @@ php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
         //...
     ],
 ```
-
-Компоненты
-===========
-Получить вишлист ТЕКУЩЕГО пользователя (возвращает массив моделей добавленных в вишлист объектов):
 ```php
-\Yii::$app->wishlist->getUserWishList($type=0)   тип  по умолчанию 0 
+\Yii::$app->wishlist->getUserWishList($type=0)
 ```
 
-Получить количество добавленных в вишлист объектов для текущего пользователя
+
 ```php
 \Yii::$app->wishlist->getUserWishlistAmount()
 ```
@@ -71,9 +31,6 @@ php yii migrate --migrationPath=vendor/samwolf1982/yii2-wishlist/migrations
 add if present class
 ```
 
-Виджеты
-==========
-Кнопка добавить/убрать объект в избранное.
 
 ```php
 
@@ -81,26 +38,14 @@ add if present class
 use kriptograf\wishlist\widgets\WishlistButton;
 ?>
 
-<?php /* Выведет кнопку "добавить в избранное" */ ?>
+<?php  ?>
 <?= WishlistButton::widget([
 	'model' => $model
 ]) ?>
 
-<?php /* Выведет кнопку "добавить в избранное" с пользовательскими параметрами */ ?>
-<?= WishlistButton::widget([
-	'model' => $model, // модель для добавления
-	'anchorActive' => 'В избранном', // свой текст активной кнопки
-	'anchorUnactive' => 'В избранное', // свой текст неактивной кнопки
-  'anchorTitleActive' => 'В избранном',//Свой текст подсказки активной кнопки
-  'anchorTitleUnactive' => 'В избранное',//свой текст подсказки неактивной кнопки
-	'htmlTag' => 'a', // тэг
-	'cssClass' => 'custom_class', // свой класс
-    'cssClassInList' => 'custom_class' // свой класс для добавленного объекта
-]) ?>
+
 
 ```
-
-Дефолтные css-стили
 ```css
 
 .hal-wishlist-button {
@@ -111,7 +56,7 @@ use kriptograf\wishlist\widgets\WishlistButton;
     content: "\f08a";
     font: 400 15px/31px "FontAwesome";
     color: white;
-    background: #929292; /* цвет сердечка */
+    background: #929292;
     width: 30px;
     text-align: center;
     display: inline-block;
@@ -127,7 +72,7 @@ use kriptograf\wishlist\widgets\WishlistButton;
 }
 
 .in-list:before {
-    background: #CC63B0; /* цвет сердечка */
+    background: #CC63B0l;
 }
 
 
